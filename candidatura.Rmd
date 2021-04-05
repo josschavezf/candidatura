@@ -1,0 +1,666 @@
+---
+title: "Universidad Nacional Autónoma de México<br><br>"
+subtitle: "<br>Análisis de los elementos de regulación transcripcional a través de los *phyla* bacterianos y de archaeas."
+author: "<br>Presenta<br>M.C. Joselyn Cristina Chávez Fuentes"
+institute: "Tutor<br>Dr. Enrique Merino Pérez"
+output:
+  xaringan::moon_reader:
+    css: ["css/cand.css"]
+---
+# La regulación génica en procariotas
+
+### Factores Sigma
+<br><br>
+
+.pull-left[
+- Reconocimiento de la secuencia promotora.
+- Reclutamiento de la holoenzima RNAP al promotor.
+- Apertura de la región -10 para formar la burbuja de transcripción.
+- Interacción con otros factores transcripcionales.
+]
+
+.pull-right[
+[
+```{r,echo=FALSE,out.width='90%'}
+library(knitr)
+include_graphics("img/sf.png")
+```
+](https://cdnsciencepub.com/doi/10.1139/cjm-2016-0576?url_ver=Z39.88-2003&rfr_id=ori%3Arid%3Acrossref.org&rfr_dat=cr_pub++0pubmed&)
+Davis, *et al*, 2017
+]
+
+---
+# La regulación génica en procariotas
+
+### Factores Transcripcionales
+<br><br>
+
+.pull-left[<br><br>
+- Regulación de la expresión en respuesta a señales celulares o ambientales.
+- Activadores, represores o ambos.
+]
+
+.pull-right[
+[
+```{r,echo=FALSE,out.width='90%'}
+include_graphics("img/tf.png")
+```
+](https://link.springer.com/chapter/10.1007/978-90-481-9069-0_2)
+Narain-Seshasayee, *et al*, 2011
+]
+---
+# La regulación génica en procariotas
+
+### Riboswitches
+
+.pull-left[
+
+Formados por dos dominios:
+- Aptámero.
+- Plataforma de expresión.
+
+[
+```{r,echo=FALSE,out.width='90%'}
+include_graphics("img/riboswitch.png")
+```
+](https://www.nature.com/scitable/topicpage/riboswitches-a-common-rna-regulatory-element-14262702/#)
+Edwards, *et al*, 2010
+]
+
+.pull-right[
+[
+```{r,echo=FALSE,out.width='90%'}
+library(knitr)
+include_graphics("img/terminador_transcripcional.png")
+```
+](https://www.semanticscholar.org/paper/Functional-complexity-and-regulation-through-RNA-Dethoff-Chugh/13fc1bad70f3448b8617d83347da1e783d5b9ad6)
+Dethoff, *et al*, 2012
+
+[
+```{r,echo=FALSE,out.width='90%'}
+library(knitr)
+include_graphics("img/ribotpp.png")
+```
+](https://link.springer.com/chapter/10.1007/978-981-10-8372-3_3)
+Yamauchi & Sugimoto, 2018
+]
+
+
+---
+# Clasificación de las proteínas en grupos de ortología
+
+<br>
+
+.pull-left[
+```{r,echo=FALSE,out.width='40%', fig.align='center'}
+include_graphics("img/cog.png")
+```
+
+- Similitud de secuencia.
+- 4631 grupos de ortología.
+- 91 grupos de Factores Transcripcionales.
+- 4 grupos de Factores Sigma.
+
+]
+
+.pull-right[
+```{r,echo=FALSE,out.width='30%', fig.align='center'}
+include_graphics("img/kegg.jpg")
+```
+
+- Similitud de secuencia.
+- Clasificación funcional.
+- Evidencia experimental.
+- 22557 grupos de ortología.
+- 369 grupos de Factores Transcripcionales.
+- 9 grupos de Factores Sigma.
+
+]
+
+---
+# Antecedentes
+<br><br>
+.left-column[<br><br>
+Estudiando 90 genomas de bacterias y archaeas.
+
+Los organismos patógenos y parásitos estrictos mostraron un bajo número de TFs.
+
+Los organismos de vida libre y simbiontes mostraron una mayor proporción de TFs.
+]
+.right-column[
+[
+```{r, echo=FALSE,out.width='110%'}
+include_graphics("img/perezrueda_2004.png")
+```
+](https://www.sciencedirect.com/science/article/abs/pii/S1476927104000672?via%3Dihub)
+Pérez-Rueda, *et al*, 2004
+]
+
+---
+class: center, middle
+
+## Hipótesis
+
+La frecuencia relativa de las familias de reguladores transcripcionales (factores sigma, factores transcripcionales y riboswitches) de los organismos procariontes varía de acuerdo al *phylum* al que pertenecen.<br><br>
+
+
+## Objetivo general
+
+Caracterizar la abundancia de elementos de regulación transcripcional en los *phyla* de bacterias y archaeas, así como su relación con el tamaño de genoma y estilo de vida de cada *phylum*.
+
+---
+.center[ 
+## Objetivos particulares ]
+
+<br>
+
+1. Identificar *in silico* los elementos de regulación de la expresión génica; a) factores transcripcionales b) factores sigma y c) regulación por riboswitches.
+
+2. Evaluar la relación entre la abundancia de reguladores transcripcionales y el tamaño de genoma en bacterias y archaeas.
+
+3. Evaluar el enriquecimiento de las familias de reguladores transcripcionales en bacterias y archaeas de acuerdo con el *phylum*.
+
+4. Analizar el contexto genómico de los factores transcripcionales y factores sigma.
+
+---
+class: chapter-slide
+
+# Objetivo 1: Identificar *in silico* los elementos de regulación de la expresión génica; a) factores transcripcionales b) factores sigma y c) regulación por riboswitches.
+
+---
+# Selección de organismos de estudio
+<br><br>
+
+.pull-left[
+- 4852 genomas de bacterias
+- 281 genomas de archaeas
+
+**Genomas redundantes**
+
+```{r, echo=FALSE,message=FALSE}
+library(dplyr)
+library(kableExtra)
+x <- tibble(Especie = c("Escherichia coli", "Escherichia coli"),
+            cepa = c("DH1", "O145:H28"),
+            CDS = c(4160,5776))
+kable(x) %>% 
+  column_spec(1,italic = TRUE,border_left = TRUE) %>% 
+  column_spec(1:3,border_right = TRUE)
+```
+]
+---
+# Selección de organismos de estudio
+<br><br>
+
+.pull-left[
+- 4852 genomas de bacterias
+- 281 genomas de archaeas
+
+**Genomas redundantes**
+
+```{r, echo=FALSE,message=FALSE}
+x <- tibble(Especie = c("Escherichia coli", "Escherichia coli"), 
+            cepa = c("DH1", "O145:H28"),
+            CDS = c(4160,5776))
+kable(x) %>% 
+  column_spec(1,italic = TRUE,border_left = TRUE) %>%
+  column_spec(1:3,border_right = TRUE) %>% 
+  row_spec(2, color = 'white', background = '#3269a8')
+```
+
+<br><br>
+**Organismo representante de especie**
+
+```{r, echo=FALSE,message=FALSE}
+library(dplyr)
+
+x <- tibble(Especie = c("Escherichia coli"), 
+            CDS = c(5776))
+kable(x)%>% 
+  column_spec(1,italic = TRUE,border_left = TRUE) %>% 
+  column_spec(1:2,border_right = TRUE)
+```
+
+]
+--
+.pull-right[
+```{r, echo=FALSE}
+phylum <- tibble(phylum = c("Actinobacteria", "Bacteroidetes", "Chlamydiae", "Crenarchaeota", "Euryarchaeota", "Firmicutes", "Planctomycetes", "Proteobacteria", "Spirochaetes", "Tenericutes","Verrucomicrobia"), n = c(371,212,16,46,156,487,18,1271,48,87,8) )
+
+kable(phylum)
+```
+
+Total:  
+2518 genomas de bacterias  
+202 genomas de archaeas
+]
+
+---
+# Conteo de factores transcripcionales y factores sigma
+
+.center[
+**Conteo de reguladores** ]
+```{r,echo=FALSE}
+x <- read.table("data/table_cog.txt", header = TRUE)
+kable(x[c(1,2,5),c(1,5:8)], row.names = FALSE,align = 'c') %>% 
+    kable_styling(position = "center") %>% 
+  column_spec(1:5, border_left = TRUE)  %>% 
+  column_spec(5, border_right = TRUE)
+```
+
+<br><br>
+
+.center[
+**Adición de tamaño de genoma y grupo filogenético**]
+```{r, echo=FALSE}
+x <- read.table("data/table_ko.txt", header = TRUE)
+kable(x[c(1,2,5),-6], row.names = FALSE, align ='c') %>%
+    kable_styling(position = "center")%>% 
+  column_spec(1:7, border_left = TRUE)  %>% 
+  column_spec(7, border_right = TRUE)
+```
+
+---
+# Búsqueda de riboswitches de tipo atenuador transcripcional Rho-independiente
+<br>
+
+.pull-left[
+.center[** Búsqueda de riboswitches**]
+<br>
+```{r,echo=FALSE,out.width='50%', fig.align='center',fig.cap="Matrices de covarianza"}
+include_graphics("img/rfam.png")
+```
+<br>
+```{r,echo=FALSE,out.width='50%',fig.align='center'}
+include_graphics("img/cmsearch.png")
+```
+<br><br>
+```{r,echo=FALSE,out.width='50%',fig.align='center', fig.cap="Regiones intergénicas"}
+include_graphics("img/intergenica.png")
+```
+]
+
+.pull-right[
+**Predicción de estructura de terminador Rho-independiente**
+<br><br>
+```{r,echo=FALSE,out.width='90%',fig.align='center'}
+include_graphics("img/ribo_transcripcional.png")
+
+```
+
+```{r,echo=FALSE,out.width='40%',fig.align='center'}
+include_graphics("img/rnafold.png")
+```
+]
+
+---
+# Número de reguladores encontrados en cada base de datos
+<br><br>
+.left-column[<br><br><br>
+```{r,echo=FALSE,out.width='100%',fig.align='center'}
+include_graphics("img/F1.png")
+```
+]
+--
+.right-column[
+```{r,echo=FALSE,out.width='110%',fig.align='center'}
+include_graphics("img/F2.png")
+```
+]
+---
+class: chapter-slide
+
+# Objetivo 2: Evaluar la relación entre la abundancia de reguladores transcripcionales y el tamaño de genoma en bacterias y archaeas.
+
+---
+# El número de reguladores tiene una relación positiva con el tamaño del genoma.
+```{r,echo=FALSE,out.width='83%',fig.align='center'}
+include_graphics("img/F3_1.png")
+```
+
+---
+# La tasa de incremento de reguladores transcripcionales es específica del *phylum*
+```{r,echo=FALSE,out.width='83%',fig.align='center'}
+include_graphics("img/F3_2.png")
+```
+
+---
+# Número de reguladores usando la base KEGG
+<br>
+```{r,echo=FALSE,out.width='83%',fig.align='center'}
+include_graphics("img/F4.png")
+```
+
+---
+# La relación de TFs *vs* SFs es particular de cada *phylum*
+```{r,echo=FALSE,out.width='85%',fig.align='center'}
+include_graphics("img/F5.png")
+```
+
+---
+class: chapter-slide
+
+# Objetivo 3: Evaluar el enriquecimiento de las familias de reguladores transcripcionales en bacterias y archaeas de acuerdo con el *phylum*.
+
+---
+# Análisis de enriquecimiento
+
+<br>
+```{r,echo=FALSE}
+x <- read.table("data/table_cog.txt", header = TRUE)
+kable(x[,c(1,2,5:8)], row.names = FALSE,align = c('c')) %>% 
+  kable_styling(position = "center", full_width = FALSE) %>% 
+  column_spec(1:6, border_left = TRUE) %>% 
+  column_spec(6, border_right = TRUE) 
+```
+<br><br>
+
+.center[**Prueba de Fisher**]
+```{r,echo=FALSE}
+x <- tibble(x = c("Número de reguladores COG0568 en Proteobacterias", "Número de reguladores COG0568 en otros phyla"), y = c("Número de reguladores excepto COG0568 en Protebacterias", "Número de reguladores excepto COG0568 en otros phyla") )
+kable(x,col.names = c("",""),table.attr = "style='width:60%;'", align = 'c') %>% 
+  kable_styling(position = "center") %>% 
+  column_spec(1:2, color = 'black', background = '#d4d3d2')
+```
+
+---
+# El enriquecimiento de cada familia es específica del *phylum*
+<br><br>
+.center[**Factores transcripcionales**]
+
+```{r,echo=FALSE,out.width='100%',fig.align='center'}
+include_graphics("img/F6_1.png")
+```
+```{r,echo=FALSE,out.width='20%',fig.align='center'}
+include_graphics("img/oddratio.png")
+```
+
+---
+# El enriquecimiento de cada familia es específica del *phylum*
+
+.pull-left[
+```{r,echo=FALSE,out.width='110%',fig.align='center'}
+include_graphics("img/F6_1_cog.png")
+```
+```{r,echo=FALSE,out.width='30%',fig.align='center'}
+include_graphics("img/oddratio.png")
+```
+
+Ampliamente distribuidos: 
+- DtxR (COG1321) 
+- TFs con dominios helix-turn-helix (HTH)-like (COG2865) 
+- GntR (COG1725)
+]
+--
+.pull-right[
+Archaeas 
+- TFs con dominio HTH (COG3373)
+- TFs involucrados en biosíntesis de tiamina (COG1992) 
+- TFs con función desconocida (COG1709)
+
+Firmicutes
+- CodY (COG4465)
+- ComK (COG4903)
+- TFs predichos con dominios CBS (COG4109)
+
+Proteobacterias
+- MltR (COG3722)
+- TFs dependientes de sigma54 (COG4650)
+
+]
+
+---
+# El enriquecimiento de cada familia es específica del *phylum*
+
+.pull-left[
+```{r,echo=FALSE,out.width='110%',fig.align='center'}
+include_graphics("img/F6_1_ko.png")
+```
+```{r,echo=FALSE,out.width='30%',fig.align='center'}
+include_graphics("img/oddratio.png")
+```
+
+Proteobacteria (114 KOs exclusivos)
+- 25 grupos KO LysR
+- 21 KOs LuxR
+- 18 grupos AraC
+- 12 grupos TetR/AcrR
+]
+.pull-right[<br><br>
+Firmicutes (28 grupos KOs exclusivos)
+- MarR con dominio helix-turn-helix 
+- MerR 
+
+Actinobacterias (4 grupos KO exclusivos)
+- WhiB-like
+
+Bacteroidetes (2 grupos KO exclusivos)
+- CRP/FNR
+- HTH-type.
+
+Archaeas (4 grupos KO exclusivos con función desconocida.
+]
+---
+# El enriquecimiento de cada familia es específica del *phylum*
+
+.center[**Factores sigma**]
+```{r,echo=FALSE,out.width='70%',fig.align='center'}
+include_graphics("img/F6_2.png")
+```
+```{r,echo=FALSE,out.width='20%',fig.align='center'}
+include_graphics("img/oddratio.png")
+```
+
+.pull-left[
+sigmaH -> Respuesta a heat shock.  
+sigH -> Genes de fase estacionaria y durante el inicio de la esporulación.
+]
+.pull-right[
+sigmaF en Chlamydias se expresa durante el ciclo de infección y en respuesta a choque térmico.
+]
+---
+# Existe un enriquecimiento de familias dentro de cada *phylum*
+
+```{r,echo=FALSE,out.width='100%',fig.align='center'}
+include_graphics("img/F7.png")
+```
+.pull-left[
+- Familia AcrR en Actinobacterias
+- Familia LysR en Proteobacteras
+- Familia MurR/RpiR con dominios HTH y SIS en Tenericutes
+- Familia LacI/PurR en Verrucomicrobia
+]
+.pull-right[
+- Factores sigma D, S y H preponderantemente abundantes en Chlamydias y Tenericutes.
+- En Chlamydias sigmaN se expresa durante las fases activa y persistente de la infección.
+]
+---
+# El enriquecimiento de cada familia es específica del *phylum*
+
+.center[**Riboswitches**]
+
+```{r,echo=FALSE,out.width='65%',fig.align='center'}
+include_graphics("img/F6_3.png")
+```
+```{r,echo=FALSE,out.width='20%',fig.align='center'}
+include_graphics("img/oddratio.png")
+```
+
+---
+# Búsqueda de riboswitches de tipo atenuador traduccional
+<br>
+
+.pull-left[
+.center[** Búsqueda de riboswitches**]
+<br>
+```{r,echo=FALSE,out.width='50%', fig.align='center',fig.cap="Matrices de covarianza"}
+include_graphics("img/rfam.png")
+```
+<br>
+```{r,echo=FALSE,out.width='50%',fig.align='center'}
+include_graphics("img/cmsearch.png")
+```
+<br><br>
+```{r,echo=FALSE,out.width='50%',fig.align='center', fig.cap="Regiones intergénicas"}
+include_graphics("img/intergenica.png")
+```
+]
+
+.pull-right[
+**Predicción de estructura de atenuador traduccional**
+<br><br>
+```{r,echo=FALSE,out.width='85%',fig.align='center'}
+include_graphics("img/ribo_traduccional.png")
+
+```
+
+```{r,echo=FALSE,out.width='40%',fig.align='center'}
+include_graphics("img/rnafold.png")
+```
+]
+
+---
+# El uso de riboswitches de tipo atenuador transcripcional y traduccional depende del *phylum*
+```{r,echo=FALSE,out.width='85%',fig.align='center'}
+include_graphics("img/F8.png")
+```
+
+---
+class: chapter-slide
+
+# Objetivo 4: Analizar el contexto genómico de los factores transcripcionales y factores sigma.
+
+---
+# Predicción de operones en el genoma de bacterias y archaeas.
+<br><br>
+
+.pull-left[
+Utilizando el programa [Operon-mapper](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6247939/) de Taboada, *et al*, 2018. <br>
+
+Operon-mapper toma en cuenta:
+- Distancias intergénicas entre los genes vecinos.
+- Relaciones funcionales de las proteínas codificadas.
+]
+
+.pull-right[
+Conteo de TFs y SFs como:
+- Monocistron.
+- Cabeza de operon.
+- Parte del cuerpo del operon.
+]
+<br>
+```{r,echo=FALSE}
+x <- read.delim("data/operones.txt")
+kable(x,align = 'c') %>% 
+  kable_styling(position = "center") %>% 
+  column_spec(1:4,border_left = TRUE) %>% 
+  column_spec(4,border_right = TRUE)
+```
+
+---
+# Frecuencia de TFs y SFs en operon 
+<br><br><br><br>
+```{r, echo=FALSE,out.width='100%', fig.align='center'}
+include_graphics("img/F9_1.png")
+```
+```{r, echo=FALSE,out.width='10%', fig.align='center'}
+include_graphics("img/F9_3.png")
+```
+---
+# Frecuencia de familias de factores sigma en operon 
+```{r, echo=FALSE,out.width='100%', fig.align='center'}
+include_graphics("img/F9_2.png")
+```
+
+---
+class: chapter-slide
+
+# Perspectivas
+
+---
+.center[
+# Perspectivas 
+]
+<br><br>
+1. Complementar el análisis de enriquecimiento de familias de factores transcripcionales y factores sigma utilizando otras bases de datos con clasificaciones de ortología, como EggNOG (Huerta-Cepas *et al*, 2016, 2019).
+2. Realizar la búsqueda de motivos de secuencia conservados en las regiones de regulación de factores transcripcionales y factores sigma para cada familia de regulador.
+3. Evaluar la simlitud de motivos de secuencia conservados de los reguladores
+transcripcionales a diversos niveles taxonómicos.
+4. Determinar los posibles genes blanco de las familias de factores transcripcionales y
+factores sigma.
+5. Evaluar la contribución del contexto genómico de los factores transcripcionales y sigma
+en la regulación génica específica de *phylum*.
+
+---
+# Artículos publicados
+<br><br>
+.pull-left[
+Enero 2021
+<br><br>
+```{r, echo=FALSE,out.width='100%', fig.align='center'}
+include_graphics("img/article_1.png")
+```
+]
+
+.pull-right[
+Agosto 2020
+```{r, echo=FALSE,out.width='100%', fig.align='center'}
+include_graphics("img/article_2.png")
+```
+]
+---
+# Colaboraciones adicionales
+
+```{r, echo=FALSE,out.width='110%', fig.align='center'}
+include_graphics("img/colaboraciones.png")
+```
+
+---
+class: middle, center
+
+```{r, echo=FALSE,out.width='40%', fig.align='center'}
+include_graphics("img/gracias.png")
+```
+
+# Gracias!
+
+---
+class: chapter-slide, center, middle
+
+## Diapositivas generadas usando el paquete  [xaringan](https://github.com/yihui/xaringan) de Yihui Xie y el theme [candidatura](https://github.com/josschavezf/candidatura) de Joselyn Chávez.
+
+---
+# Abundancia de reguladores a nivel de clase
+<br>
+```{r, echo=FALSE,out.width='80%', fig.align='center'}
+include_graphics("img/clase.png")
+```
+
+---
+# El número de genes por operon no disminuye conforme aumenta el tamaño de genoma.
+
+Contrario al reporte previo de [Cherry,2003](https://www.sciencedirect.com/science/article/abs/pii/S0022519303931948?via%3Dihub) usando 26 genomas de bacterias y archaeas.
+
+```{r, echo=FALSE,out.width='80%', fig.align='center'}
+include_graphics("img/gpo.png")
+```
+
+---
+# Abundancia de operones en Proteobacterias
+.pull-left[
+```{r, echo=FALSE,out.width='80%', fig.align='center'}
+include_graphics("img/operones_proteo_tf.png")
+```
+]
+.pull-right[
+```{r, echo=FALSE,out.width='80%', fig.align='center'}
+include_graphics("img/operones_proteo_sf.png")
+```
+]
+
+```{r, echo=FALSE,out.width='60%', fig.align='center'}
+include_graphics("img/operones_proteo_sigma.png")
+```
+
+
+

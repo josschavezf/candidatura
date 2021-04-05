@@ -1,0 +1,939 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Universidad Nacional Autónoma de México  </title>
+    <meta charset="utf-8" />
+    <meta name="author" content=" Presenta M.C. Joselyn Cristina Chávez Fuentes" />
+    <script src="candidatura_files/header-attrs-2.7/header-attrs.js"></script>
+    <script src="candidatura_files/kePrint-0.0.1/kePrint.js"></script>
+    <link href="candidatura_files/lightable-0.0.1/lightable.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/cand.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# Universidad Nacional Autónoma de México<br><br>
+## <br>Análisis de los elementos de regulación transcripcional a través de los <em>phyla</em> bacterianos y de archaeas.
+### <br>Presenta<br>M.C. Joselyn Cristina Chávez Fuentes
+### Tutor<br>Dr. Enrique Merino Pérez
+
+---
+
+# La regulación génica en procariotas
+
+### Factores Sigma
+&lt;br&gt;&lt;br&gt;
+
+.pull-left[
+- Reconocimiento de la secuencia promotora.
+- Reclutamiento de la holoenzima RNAP al promotor.
+- Apertura de la región -10 para formar la burbuja de transcripción.
+- Interacción con otros factores transcripcionales.
+]
+
+.pull-right[
+[
+&lt;img src="img/sf.png" width="90%" /&gt;
+](https://cdnsciencepub.com/doi/10.1139/cjm-2016-0576?url_ver=Z39.88-2003&amp;rfr_id=ori%3Arid%3Acrossref.org&amp;rfr_dat=cr_pub++0pubmed&amp;)
+Davis, *et al*, 2017
+]
+
+---
+# La regulación génica en procariotas
+
+### Factores Transcripcionales
+&lt;br&gt;&lt;br&gt;
+
+.pull-left[&lt;br&gt;&lt;br&gt;
+- Regulación de la expresión en respuesta a señales celulares o ambientales.
+- Activadores, represores o ambos.
+]
+
+.pull-right[
+[
+&lt;img src="img/tf.png" width="90%" /&gt;
+](https://link.springer.com/chapter/10.1007/978-90-481-9069-0_2)
+Narain-Seshasayee, *et al*, 2011
+]
+---
+# La regulación génica en procariotas
+
+### Riboswitches
+
+.pull-left[
+
+Formados por dos dominios:
+- Aptámero.
+- Plataforma de expresión.
+
+[
+&lt;img src="img/riboswitch.png" width="90%" /&gt;
+](https://www.nature.com/scitable/topicpage/riboswitches-a-common-rna-regulatory-element-14262702/#)
+Edwards, *et al*, 2010
+]
+
+.pull-right[
+[
+&lt;img src="img/terminador_transcripcional.png" width="90%" /&gt;
+](https://www.semanticscholar.org/paper/Functional-complexity-and-regulation-through-RNA-Dethoff-Chugh/13fc1bad70f3448b8617d83347da1e783d5b9ad6)
+Dethoff, *et al*, 2012
+
+[
+&lt;img src="img/ribotpp.png" width="90%" /&gt;
+](https://link.springer.com/chapter/10.1007/978-981-10-8372-3_3)
+Yamauchi &amp; Sugimoto, 2018
+]
+
+
+---
+# Clasificación de las proteínas en grupos de ortología
+
+&lt;br&gt;
+
+.pull-left[
+&lt;img src="img/cog.png" width="40%" style="display: block; margin: auto;" /&gt;
+
+- Similitud de secuencia.
+- 4631 grupos de ortología.
+- 91 grupos de Factores Transcripcionales.
+- 4 grupos de Factores Sigma.
+
+]
+
+.pull-right[
+&lt;img src="img/kegg.jpg" width="30%" style="display: block; margin: auto;" /&gt;
+
+- Similitud de secuencia.
+- Clasificación funcional.
+- Evidencia experimental.
+- 22557 grupos de ortología.
+- 369 grupos de Factores Transcripcionales.
+- 9 grupos de Factores Sigma.
+
+]
+
+---
+# Antecedentes
+&lt;br&gt;&lt;br&gt;
+.left-column[&lt;br&gt;&lt;br&gt;
+Estudiando 90 genomas de bacterias y archaeas.
+
+Los organismos patógenos y parásitos estrictos mostraron un bajo número de TFs.
+
+Los organismos de vida libre y simbiontes mostraron una mayor proporción de TFs.
+]
+.right-column[
+[
+&lt;img src="img/perezrueda_2004.png" width="110%" /&gt;
+](https://www.sciencedirect.com/science/article/abs/pii/S1476927104000672?via%3Dihub)
+Pérez-Rueda, *et al*, 2004
+]
+
+---
+class: center, middle
+
+## Hipótesis
+
+La frecuencia relativa de las familias de reguladores transcripcionales (factores sigma, factores transcripcionales y riboswitches) de los organismos procariontes varía de acuerdo al *phylum* al que pertenecen.&lt;br&gt;&lt;br&gt;
+
+
+## Objetivo general
+
+Caracterizar la abundancia de elementos de regulación transcripcional en los *phyla* de bacterias y archaeas, así como su relación con el tamaño de genoma y estilo de vida de cada *phylum*.
+
+---
+.center[ 
+## Objetivos particulares ]
+
+&lt;br&gt;
+
+1. Identificar *in silico* los elementos de regulación de la expresión génica; a) factores transcripcionales b) factores sigma y c) regulación por riboswitches.
+
+2. Evaluar la relación entre la abundancia de reguladores transcripcionales y el tamaño de genoma en bacterias y archaeas.
+
+3. Evaluar el enriquecimiento de las familias de reguladores transcripcionales en bacterias y archaeas de acuerdo con el *phylum*.
+
+4. Analizar el contexto genómico de los factores transcripcionales y factores sigma.
+
+---
+class: chapter-slide
+
+# Objetivo 1: Identificar *in silico* los elementos de regulación de la expresión génica; a) factores transcripcionales b) factores sigma y c) regulación por riboswitches.
+
+---
+# Selección de organismos de estudio
+&lt;br&gt;&lt;br&gt;
+
+.pull-left[
+- 4852 genomas de bacterias
+- 281 genomas de archaeas
+
+**Genomas redundantes**
+
+&lt;table&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; Especie &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; cepa &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; CDS &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;font-style: italic;border-left:1px solid;border-right:1px solid;"&gt; Escherichia coli &lt;/td&gt;
+   &lt;td style="text-align:left;border-right:1px solid;"&gt; DH1 &lt;/td&gt;
+   &lt;td style="text-align:right;border-right:1px solid;"&gt; 4160 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;font-style: italic;border-left:1px solid;border-right:1px solid;"&gt; Escherichia coli &lt;/td&gt;
+   &lt;td style="text-align:left;border-right:1px solid;"&gt; O145:H28 &lt;/td&gt;
+   &lt;td style="text-align:right;border-right:1px solid;"&gt; 5776 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+]
+---
+# Selección de organismos de estudio
+&lt;br&gt;&lt;br&gt;
+
+.pull-left[
+- 4852 genomas de bacterias
+- 281 genomas de archaeas
+
+**Genomas redundantes**
+
+&lt;table&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; Especie &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; cepa &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; CDS &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;font-style: italic;border-left:1px solid;border-right:1px solid;"&gt; Escherichia coli &lt;/td&gt;
+   &lt;td style="text-align:left;border-right:1px solid;"&gt; DH1 &lt;/td&gt;
+   &lt;td style="text-align:right;border-right:1px solid;"&gt; 4160 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;font-style: italic;border-left:1px solid;border-right:1px solid;color: white !important;background-color: #3269a8 !important;"&gt; Escherichia coli &lt;/td&gt;
+   &lt;td style="text-align:left;border-right:1px solid;color: white !important;background-color: #3269a8 !important;"&gt; O145:H28 &lt;/td&gt;
+   &lt;td style="text-align:right;border-right:1px solid;color: white !important;background-color: #3269a8 !important;"&gt; 5776 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;br&gt;&lt;br&gt;
+**Organismo representante de especie**
+
+&lt;table&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; Especie &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; CDS &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;font-style: italic;border-left:1px solid;border-right:1px solid;"&gt; Escherichia coli &lt;/td&gt;
+   &lt;td style="text-align:right;border-right:1px solid;"&gt; 5776 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+]
+--
+.pull-right[
+&lt;table&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; phylum &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; n &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Actinobacteria &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 371 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bacteroidetes &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 212 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Chlamydiae &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 16 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Crenarchaeota &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 46 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Euryarchaeota &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 156 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Firmicutes &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 487 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Planctomycetes &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 18 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Proteobacteria &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1271 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Spirochaetes &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 48 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Tenericutes &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 87 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Verrucomicrobia &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 8 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+Total:  
+2518 genomas de bacterias  
+202 genomas de archaeas
+]
+
+---
+# Conteo de factores transcripcionales y factores sigma
+
+.center[
+**Conteo de reguladores** ]
+&lt;table class="table" style="margin-left: auto; margin-right: auto;"&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:center;"&gt; organismo &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; COG0568 &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; COG1191 &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; COG1508 &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; COG1595 &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;border-left:1px solid;"&gt; aaa &lt;/td&gt;
+   &lt;td style="text-align:center;border-left:1px solid;"&gt; 3 &lt;/td&gt;
+   &lt;td style="text-align:center;border-left:1px solid;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:center;border-left:1px solid;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:center;border-left:1px solid;border-right:1px solid;"&gt; 9 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;border-left:1px solid;"&gt; aab &lt;/td&gt;
+   &lt;td style="text-align:center;border-left:1px solid;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:center;border-left:1px solid;"&gt; 3 &lt;/td&gt;
+   &lt;td style="text-align:center;border-left:1px solid;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:center;border-left:1px solid;border-right:1px solid;"&gt; 52 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;border-left:1px solid;"&gt; aalg &lt;/td&gt;
+   &lt;td style="text-align:center;border-left:1px solid;"&gt; 3 &lt;/td&gt;
+   &lt;td style="text-align:center;border-left:1px solid;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:center;border-left:1px solid;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:center;border-left:1px solid;border-right:1px solid;"&gt; 34 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;br&gt;&lt;br&gt;
+
+.center[
+**Adición de tamaño de genoma y grupo filogenético**]
+&lt;table class="table" style="margin-left: auto; margin-right: auto;"&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:center;"&gt; organismo &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; phylum &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; clase &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; CDS &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; K02405 &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; K03087 &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; K03088 &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;border-left:1px solid;"&gt; aaa &lt;/td&gt;
+   &lt;td style="text-align:center;border-left:1px solid;"&gt; Proteobacteria &lt;/td&gt;
+   &lt;td style="text-align:center;border-left:1px solid;"&gt; Betaproteobacteria &lt;/td&gt;
+   &lt;td style="text-align:center;border-left:1px solid;"&gt; 4737 &lt;/td&gt;
+   &lt;td style="text-align:center;border-left:1px solid;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:center;border-left:1px solid;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:center;border-left:1px solid;border-right:1px solid;"&gt; 9 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;border-left:1px solid;"&gt; aab &lt;/td&gt;
+   &lt;td style="text-align:center;border-left:1px solid;"&gt; Actinobacteria &lt;/td&gt;
+   &lt;td style="text-align:center;border-left:1px solid;"&gt; Actinobacteria &lt;/td&gt;
+   &lt;td style="text-align:center;border-left:1px solid;"&gt; 8115 &lt;/td&gt;
+   &lt;td style="text-align:center;border-left:1px solid;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:center;border-left:1px solid;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:center;border-left:1px solid;border-right:1px solid;"&gt; 45 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;border-left:1px solid;"&gt; aalg &lt;/td&gt;
+   &lt;td style="text-align:center;border-left:1px solid;"&gt; Bacteroidetes &lt;/td&gt;
+   &lt;td style="text-align:center;border-left:1px solid;"&gt; Flavobacteriia &lt;/td&gt;
+   &lt;td style="text-align:center;border-left:1px solid;"&gt; 4932 &lt;/td&gt;
+   &lt;td style="text-align:center;border-left:1px solid;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:center;border-left:1px solid;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:center;border-left:1px solid;border-right:1px solid;"&gt; 30 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+---
+# Búsqueda de riboswitches de tipo atenuador transcripcional Rho-independiente
+&lt;br&gt;
+
+.pull-left[
+.center[** Búsqueda de riboswitches**]
+&lt;br&gt;
+&lt;div class="figure" style="text-align: center"&gt;
+&lt;img src="img/rfam.png" alt="Matrices de covarianza" width="50%" /&gt;
+&lt;p class="caption"&gt;Matrices de covarianza&lt;/p&gt;
+&lt;/div&gt;
+&lt;br&gt;
+&lt;img src="img/cmsearch.png" width="50%" style="display: block; margin: auto;" /&gt;
+&lt;br&gt;&lt;br&gt;
+&lt;div class="figure" style="text-align: center"&gt;
+&lt;img src="img/intergenica.png" alt="Regiones intergénicas" width="50%" /&gt;
+&lt;p class="caption"&gt;Regiones intergénicas&lt;/p&gt;
+&lt;/div&gt;
+]
+
+.pull-right[
+**Predicción de estructura de terminador Rho-independiente**
+&lt;br&gt;&lt;br&gt;
+&lt;img src="img/ribo_transcripcional.png" width="90%" style="display: block; margin: auto;" /&gt;
+
+&lt;img src="img/rnafold.png" width="40%" style="display: block; margin: auto;" /&gt;
+]
+
+---
+# Número de reguladores encontrados en cada base de datos
+&lt;br&gt;&lt;br&gt;
+.left-column[&lt;br&gt;&lt;br&gt;&lt;br&gt;
+&lt;img src="img/F1.png" width="100%" style="display: block; margin: auto;" /&gt;
+]
+--
+.right-column[
+&lt;img src="img/F2.png" width="110%" style="display: block; margin: auto;" /&gt;
+]
+---
+class: chapter-slide
+
+# Objetivo 2: Evaluar la relación entre la abundancia de reguladores transcripcionales y el tamaño de genoma en bacterias y archaeas.
+
+---
+# El número de reguladores tiene una relación positiva con el tamaño del genoma.
+&lt;img src="img/F3_1.png" width="83%" style="display: block; margin: auto;" /&gt;
+
+---
+# La tasa de incremento de reguladores transcripcionales es específica del *phylum*
+&lt;img src="img/F3_2.png" width="83%" style="display: block; margin: auto;" /&gt;
+
+---
+# Número de reguladores usando la base KEGG
+&lt;br&gt;
+&lt;img src="img/F4.png" width="83%" style="display: block; margin: auto;" /&gt;
+
+---
+# La relación de TFs *vs* SFs es particular de cada *phylum*
+&lt;img src="img/F5.png" width="85%" style="display: block; margin: auto;" /&gt;
+
+---
+class: chapter-slide
+
+# Objetivo 3: Evaluar el enriquecimiento de las familias de reguladores transcripcionales en bacterias y archaeas de acuerdo con el *phylum*.
+
+---
+# Análisis de enriquecimiento
+
+&lt;br&gt;
+&lt;table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;"&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:center;"&gt; organismo &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; phylum &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; COG0568 &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; COG1191 &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; COG1508 &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; COG1595 &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;border-left:1px solid;"&gt; aaa &lt;/td&gt;
+   &lt;td style="text-align:center;border-left:1px solid;"&gt; Proteobacteria &lt;/td&gt;
+   &lt;td style="text-align:center;border-left:1px solid;"&gt; 3 &lt;/td&gt;
+   &lt;td style="text-align:center;border-left:1px solid;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:center;border-left:1px solid;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:center;border-left:1px solid;border-right:1px solid;"&gt; 9 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;border-left:1px solid;"&gt; aab &lt;/td&gt;
+   &lt;td style="text-align:center;border-left:1px solid;"&gt; Actinobacteria &lt;/td&gt;
+   &lt;td style="text-align:center;border-left:1px solid;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:center;border-left:1px solid;"&gt; 3 &lt;/td&gt;
+   &lt;td style="text-align:center;border-left:1px solid;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:center;border-left:1px solid;border-right:1px solid;"&gt; 52 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;border-left:1px solid;"&gt; aace &lt;/td&gt;
+   &lt;td style="text-align:center;border-left:1px solid;"&gt; Proteobacteria &lt;/td&gt;
+   &lt;td style="text-align:center;border-left:1px solid;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:center;border-left:1px solid;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:center;border-left:1px solid;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:center;border-left:1px solid;border-right:1px solid;"&gt; 6 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;border-left:1px solid;"&gt; aal &lt;/td&gt;
+   &lt;td style="text-align:center;border-left:1px solid;"&gt; Proteobacteria &lt;/td&gt;
+   &lt;td style="text-align:center;border-left:1px solid;"&gt; 3 &lt;/td&gt;
+   &lt;td style="text-align:center;border-left:1px solid;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:center;border-left:1px solid;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:center;border-left:1px solid;border-right:1px solid;"&gt; 13 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;border-left:1px solid;"&gt; aalg &lt;/td&gt;
+   &lt;td style="text-align:center;border-left:1px solid;"&gt; Bacteroidetes &lt;/td&gt;
+   &lt;td style="text-align:center;border-left:1px solid;"&gt; 3 &lt;/td&gt;
+   &lt;td style="text-align:center;border-left:1px solid;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:center;border-left:1px solid;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:center;border-left:1px solid;border-right:1px solid;"&gt; 34 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;border-left:1px solid;"&gt; aamy &lt;/td&gt;
+   &lt;td style="text-align:center;border-left:1px solid;"&gt; Firmicutes &lt;/td&gt;
+   &lt;td style="text-align:center;border-left:1px solid;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:center;border-left:1px solid;"&gt; 8 &lt;/td&gt;
+   &lt;td style="text-align:center;border-left:1px solid;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:center;border-left:1px solid;border-right:1px solid;"&gt; 5 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;br&gt;&lt;br&gt;
+
+.center[**Prueba de Fisher**]
+&lt;table style="width:60%; margin-left: auto; margin-right: auto;" class="table"&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:center;"&gt;  &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt;  &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;color: black !important;background-color: #d4d3d2 !important;"&gt; Número de reguladores COG0568 en Proteobacterias &lt;/td&gt;
+   &lt;td style="text-align:center;color: black !important;background-color: #d4d3d2 !important;"&gt; Número de reguladores excepto COG0568 en Protebacterias &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;color: black !important;background-color: #d4d3d2 !important;"&gt; Número de reguladores COG0568 en otros phyla &lt;/td&gt;
+   &lt;td style="text-align:center;color: black !important;background-color: #d4d3d2 !important;"&gt; Número de reguladores excepto COG0568 en otros phyla &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+---
+# El enriquecimiento de cada familia es específica del *phylum*
+&lt;br&gt;&lt;br&gt;
+.center[**Factores transcripcionales**]
+
+&lt;img src="img/F6_1.png" width="100%" style="display: block; margin: auto;" /&gt;
+&lt;img src="img/oddratio.png" width="20%" style="display: block; margin: auto;" /&gt;
+
+---
+# El enriquecimiento de cada familia es específica del *phylum*
+
+.pull-left[
+&lt;img src="img/F6_1_cog.png" width="110%" style="display: block; margin: auto;" /&gt;
+&lt;img src="img/oddratio.png" width="30%" style="display: block; margin: auto;" /&gt;
+
+Ampliamente distribuidos: 
+- DtxR (COG1321) 
+- TFs con dominios helix-turn-helix (HTH)-like (COG2865) 
+- GntR (COG1725)
+]
+--
+.pull-right[
+Archaeas 
+- TFs con dominio HTH (COG3373)
+- TFs involucrados en biosíntesis de tiamina (COG1992) 
+- TFs con función desconocida (COG1709)
+
+Firmicutes
+- CodY (COG4465)
+- ComK (COG4903)
+- TFs predichos con dominios CBS (COG4109)
+
+Proteobacterias
+- MltR (COG3722)
+- TFs dependientes de sigma54 (COG4650)
+
+]
+
+---
+# El enriquecimiento de cada familia es específica del *phylum*
+
+.pull-left[
+&lt;img src="img/F6_1_ko.png" width="110%" style="display: block; margin: auto;" /&gt;
+&lt;img src="img/oddratio.png" width="30%" style="display: block; margin: auto;" /&gt;
+
+Proteobacteria (114 KOs exclusivos)
+- 25 grupos KO LysR
+- 21 KOs LuxR
+- 18 grupos AraC
+- 12 grupos TetR/AcrR
+]
+.pull-right[&lt;br&gt;&lt;br&gt;
+Firmicutes (28 grupos KOs exclusivos)
+- MarR con dominio helix-turn-helix 
+- MerR 
+
+Actinobacterias (4 grupos KO exclusivos)
+- WhiB-like
+
+Bacteroidetes (2 grupos KO exclusivos)
+- CRP/FNR
+- HTH-type.
+
+Archaeas (4 grupos KO exclusivos con función desconocida.
+]
+---
+# El enriquecimiento de cada familia es específica del *phylum*
+
+.center[**Factores sigma**]
+&lt;img src="img/F6_2.png" width="70%" style="display: block; margin: auto;" /&gt;
+&lt;img src="img/oddratio.png" width="20%" style="display: block; margin: auto;" /&gt;
+
+.pull-left[
+sigmaH -&gt; Respuesta a heat shock.  
+sigH -&gt; Genes de fase estacionaria y durante el inicio de la esporulación.
+]
+.pull-right[
+sigmaF en Chlamydias se expresa durante el ciclo de infección y en respuesta a choque térmico.
+]
+---
+# Existe un enriquecimiento de familias dentro de cada *phylum*
+
+&lt;img src="img/F7.png" width="100%" style="display: block; margin: auto;" /&gt;
+.pull-left[
+- Familia AcrR en Actinobacterias
+- Familia LysR en Proteobacteras
+- Familia MurR/RpiR con dominios HTH y SIS en Tenericutes
+- Familia LacI/PurR en Verrucomicrobia
+]
+.pull-right[
+- Factores sigma D, S y H preponderantemente abundantes en Chlamydias y Tenericutes.
+- En Chlamydias sigmaN se expresa durante las fases activa y persistente de la infección.
+]
+---
+# El enriquecimiento de cada familia es específica del *phylum*
+
+.center[**Riboswitches**]
+
+&lt;img src="img/F6_3.png" width="65%" style="display: block; margin: auto;" /&gt;
+&lt;img src="img/oddratio.png" width="20%" style="display: block; margin: auto;" /&gt;
+
+---
+# Búsqueda de riboswitches de tipo atenuador traduccional
+&lt;br&gt;
+
+.pull-left[
+.center[** Búsqueda de riboswitches**]
+&lt;br&gt;
+&lt;div class="figure" style="text-align: center"&gt;
+&lt;img src="img/rfam.png" alt="Matrices de covarianza" width="50%" /&gt;
+&lt;p class="caption"&gt;Matrices de covarianza&lt;/p&gt;
+&lt;/div&gt;
+&lt;br&gt;
+&lt;img src="img/cmsearch.png" width="50%" style="display: block; margin: auto;" /&gt;
+&lt;br&gt;&lt;br&gt;
+&lt;div class="figure" style="text-align: center"&gt;
+&lt;img src="img/intergenica.png" alt="Regiones intergénicas" width="50%" /&gt;
+&lt;p class="caption"&gt;Regiones intergénicas&lt;/p&gt;
+&lt;/div&gt;
+]
+
+.pull-right[
+**Predicción de estructura de atenuador traduccional**
+&lt;br&gt;&lt;br&gt;
+&lt;img src="img/ribo_traduccional.png" width="85%" style="display: block; margin: auto;" /&gt;
+
+&lt;img src="img/rnafold.png" width="40%" style="display: block; margin: auto;" /&gt;
+]
+
+---
+# El uso de riboswitches de tipo atenuador transcripcional y traduccional depende del *phylum*
+&lt;img src="img/F8.png" width="85%" style="display: block; margin: auto;" /&gt;
+
+---
+class: chapter-slide
+
+# Objetivo 4: Analizar el contexto genómico de los factores transcripcionales y factores sigma.
+
+---
+# Predicción de operones en el genoma de bacterias y archaeas.
+&lt;br&gt;&lt;br&gt;
+
+.pull-left[
+Utilizando el programa [Operon-mapper](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6247939/) de Taboada, *et al*, 2018. &lt;br&gt;
+
+Operon-mapper toma en cuenta:
+- Distancias intergénicas entre los genes vecinos.
+- Relaciones funcionales de las proteínas codificadas.
+]
+
+.pull-right[
+Conteo de TFs y SFs como:
+- Monocistron.
+- Cabeza de operon.
+- Parte del cuerpo del operon.
+]
+&lt;br&gt;
+&lt;table class="table" style="margin-left: auto; margin-right: auto;"&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:center;"&gt; phylum &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; cog &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; operon_position &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; n &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;border-left:1px solid;"&gt; Actinobacteria &lt;/td&gt;
+   &lt;td style="text-align:center;border-left:1px solid;"&gt; COG0001 &lt;/td&gt;
+   &lt;td style="text-align:center;border-left:1px solid;"&gt; monocistron &lt;/td&gt;
+   &lt;td style="text-align:center;border-left:1px solid;border-right:1px solid;"&gt; 49 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;border-left:1px solid;"&gt; Actinobacteria &lt;/td&gt;
+   &lt;td style="text-align:center;border-left:1px solid;"&gt; COG0001 &lt;/td&gt;
+   &lt;td style="text-align:center;border-left:1px solid;"&gt; operon body &lt;/td&gt;
+   &lt;td style="text-align:center;border-left:1px solid;border-right:1px solid;"&gt; 259 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;border-left:1px solid;"&gt; Actinobacteria &lt;/td&gt;
+   &lt;td style="text-align:center;border-left:1px solid;"&gt; COG0001 &lt;/td&gt;
+   &lt;td style="text-align:center;border-left:1px solid;"&gt; operon head &lt;/td&gt;
+   &lt;td style="text-align:center;border-left:1px solid;border-right:1px solid;"&gt; 189 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;border-left:1px solid;"&gt; Actinobacteria &lt;/td&gt;
+   &lt;td style="text-align:center;border-left:1px solid;"&gt; COG0001 &lt;/td&gt;
+   &lt;td style="text-align:center;border-left:1px solid;"&gt; NA &lt;/td&gt;
+   &lt;td style="text-align:center;border-left:1px solid;border-right:1px solid;"&gt; 2 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;border-left:1px solid;"&gt; Actinobacteria &lt;/td&gt;
+   &lt;td style="text-align:center;border-left:1px solid;"&gt; COG0002 &lt;/td&gt;
+   &lt;td style="text-align:center;border-left:1px solid;"&gt; monocistron &lt;/td&gt;
+   &lt;td style="text-align:center;border-left:1px solid;border-right:1px solid;"&gt; 4 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;border-left:1px solid;"&gt; Actinobacteria &lt;/td&gt;
+   &lt;td style="text-align:center;border-left:1px solid;"&gt; COG0002 &lt;/td&gt;
+   &lt;td style="text-align:center;border-left:1px solid;"&gt; operon body &lt;/td&gt;
+   &lt;td style="text-align:center;border-left:1px solid;border-right:1px solid;"&gt; 124 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+---
+# Frecuencia de TFs y SFs en operon 
+&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
+&lt;img src="img/F9_1.png" width="100%" style="display: block; margin: auto;" /&gt;
+&lt;img src="img/F9_3.png" width="10%" style="display: block; margin: auto;" /&gt;
+---
+# Frecuencia de familias de factores sigma en operon 
+&lt;img src="img/F9_2.png" width="100%" style="display: block; margin: auto;" /&gt;
+
+---
+class: chapter-slide
+
+# Perspectivas
+
+---
+.center[
+# Perspectivas 
+]
+&lt;br&gt;&lt;br&gt;
+1. Complementar el análisis de enriquecimiento de familias de factores transcripcionales y factores sigma utilizando otras bases de datos con clasificaciones de ortología, como EggNOG (Huerta-Cepas *et al*, 2016, 2019).
+2. Realizar la búsqueda de motivos de secuencia conservados en las regiones de regulación de factores transcripcionales y factores sigma para cada familia de regulador.
+3. Evaluar la simlitud de motivos de secuencia conservados de los reguladores
+transcripcionales a diversos niveles taxonómicos.
+4. Determinar los posibles genes blanco de las familias de factores transcripcionales y
+factores sigma.
+5. Evaluar la contribución del contexto genómico de los factores transcripcionales y sigma
+en la regulación génica específica de *phylum*.
+
+---
+# Artículos publicados
+&lt;br&gt;&lt;br&gt;
+.pull-left[
+Enero 2021
+&lt;br&gt;&lt;br&gt;
+&lt;img src="img/article_1.png" width="100%" style="display: block; margin: auto;" /&gt;
+]
+
+.pull-right[
+Agosto 2020
+&lt;img src="img/article_2.png" width="100%" style="display: block; margin: auto;" /&gt;
+]
+---
+# Colaboraciones adicionales
+
+&lt;img src="img/colaboraciones.png" width="110%" style="display: block; margin: auto;" /&gt;
+
+---
+class: middle, center
+
+&lt;img src="img/gracias.png" width="40%" style="display: block; margin: auto;" /&gt;
+
+# Gracias!
+
+---
+class: chapter-slide, center, middle
+
+## Diapositivas generadas usando el paquete  [xaringan](https://github.com/yihui/xaringan) de Yihui Xie y el theme [candidatura](https://github.com/josschavezf/candidatura) de Joselyn Chávez.
+
+---
+# Abundancia de reguladores a nivel de clase
+&lt;br&gt;
+&lt;img src="img/clase.png" width="80%" style="display: block; margin: auto;" /&gt;
+
+---
+# El número de genes por operon no disminuye conforme aumenta el tamaño de genoma.
+
+Contrario al reporte previo de [Cherry,2003](https://www.sciencedirect.com/science/article/abs/pii/S0022519303931948?via%3Dihub) usando 26 genomas de bacterias y archaeas.
+
+&lt;img src="img/gpo.png" width="80%" style="display: block; margin: auto;" /&gt;
+
+---
+# Abundancia de operones en Proteobacterias
+.pull-left[
+&lt;img src="img/operones_proteo_tf.png" width="80%" style="display: block; margin: auto;" /&gt;
+]
+.pull-right[
+&lt;img src="img/operones_proteo_sf.png" width="80%" style="display: block; margin: auto;" /&gt;
+]
+
+&lt;img src="img/operones_proteo_sigma.png" width="60%" style="display: block; margin: auto;" /&gt;
+
+
+
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create();
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
