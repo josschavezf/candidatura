@@ -8,15 +8,43 @@ output:
     css: ["css/cand.css"]
 ---
 # La regulación génica en procariotas
+.center[
+```{r,echo=FALSE,out.width='100%'}
+library(DiagrammeR)
+library(dplyr)
+a_graph <-
+  create_graph() %>%
+  add_node(label = "Regulación génica",node_aes = node_aes(shape = "rectangle",
+                                                           fontsize = 8,
+                                                           width = 1,
+                                                           style = "rounded")) %>%
+  add_node(label = "Factores sigma",node_aes = node_aes(shape = "rectangle",
+                                                           fontsize = 6,
+                                                           width = 0.7,
+                                                           style = "rounded")) %>%
+  add_node(label = "Factores \n transcripcionales",node_aes = node_aes(shape = "rectangle",
+                                                           fontsize = 6,
+                                                           width = 0.7,
+                                                           style = "rounded")) %>%
+  add_node(label = "Riboswitches",node_aes = node_aes(shape = "rectangle",
+                                                           fontsize = 6,
+                                                           width = 0.6,
+                                                           style = "rounded")) %>%
+  add_edge(from = 1, to = 2) %>% 
+  add_edge(from = 1, to = 3) %>% 
+  add_edge(from = 1, to = 4)
+render_graph(a_graph,layout = "tree")
+```
+]
+---
+# La regulación génica en procariotas
 
 ### Factores Sigma
-<br><br>
 
-.pull-left[
+.pull-left[<br><br>
 - Reconocimiento de la secuencia promotora.
 - Reclutamiento de la holoenzima RNAP al promotor.
-- Apertura de la región -10 para formar la burbuja de transcripción.
-- Interacción con otros factores transcripcionales.
+- Permiten la formación de la burbuja de transcripción.
 ]
 
 .pull-right[
@@ -26,7 +54,15 @@ library(knitr)
 include_graphics("img/sf.png")
 ```
 ](https://cdnsciencepub.com/doi/10.1139/cjm-2016-0576?url_ver=Z39.88-2003&rfr_id=ori%3Arid%3Acrossref.org&rfr_dat=cr_pub++0pubmed&)
-Davis, *et al*, 2017
+.right[Davis, *et al*, 2017]
+
+[<br>
+```{r,echo=FALSE,out.width='90%',fig.align='center'}
+library(knitr)
+include_graphics("img/sitios.png")
+```
+](https://www.sciencedirect.com/topics/biochemistry-genetics-and-molecular-biology/sigma-factor)
+.right[Burgess, 2001]
 ]
 
 ---
@@ -46,45 +82,8 @@ Davis, *et al*, 2017
 include_graphics("img/tf.png")
 ```
 ](https://link.springer.com/chapter/10.1007/978-90-481-9069-0_2)
-Narain-Seshasayee, *et al*, 2011
+.right[Narain-Seshasayee, *et al*, 2011]
 ]
----
-# La regulación génica en procariotas
-
-### Riboswitches
-
-.pull-left[
-
-Formados por dos dominios:
-- Aptámero.
-- Plataforma de expresión.
-
-[
-```{r,echo=FALSE,out.width='90%'}
-include_graphics("img/riboswitch.png")
-```
-](https://www.nature.com/scitable/topicpage/riboswitches-a-common-rna-regulatory-element-14262702/#)
-Edwards, *et al*, 2010
-]
-
-.pull-right[
-[
-```{r,echo=FALSE,out.width='90%'}
-library(knitr)
-include_graphics("img/terminador_transcripcional.png")
-```
-](https://www.semanticscholar.org/paper/Functional-complexity-and-regulation-through-RNA-Dethoff-Chugh/13fc1bad70f3448b8617d83347da1e783d5b9ad6)
-Dethoff, *et al*, 2012
-
-[
-```{r,echo=FALSE,out.width='90%'}
-library(knitr)
-include_graphics("img/ribotpp.png")
-```
-](https://link.springer.com/chapter/10.1007/978-981-10-8372-3_3)
-Yamauchi & Sugimoto, 2018
-]
-
 
 ---
 # Clasificación de las proteínas en grupos de ortología
@@ -118,14 +117,102 @@ include_graphics("img/kegg.jpg")
 ]
 
 ---
+# La regulación génica en procariotas
+
+### Riboswitches
+
+.pull-left[
+
+Formados por dos dominios:
+- Aptámero.
+- Plataforma de expresión.
+
+[
+```{r,echo=FALSE,out.width='90%'}
+include_graphics("img/riboswitch.png")
+```
+](https://www.nature.com/scitable/topicpage/riboswitches-a-common-rna-regulatory-element-14262702/#)
+.right[Edwards, *et al*, 2010]
+]
+
+.pull-right[
+Atenuador transcripcional
+[
+```{r,echo=FALSE,out.width='100%'}
+library(knitr)
+include_graphics("img/terminador_transcripcional.png")
+```
+](https://www.nature.com/articles/nbt1268)
+.right[Blount & Breaker, 2006]
+
+Atenuador traduccional
+[
+```{r,echo=FALSE,out.width='100%'}
+library(knitr)
+include_graphics("img/terminador_traduccional.png")
+```
+](https://www.nature.com/articles/nbt1268)
+.right[Blount & Breaker, 2006]
+]
+---
+# Familias de riboswitches
+<br><br><br>
+.pull-left[
+[
+```{r,echo=FALSE, out.width='60%'}
+include_graphics("img/rfam.png")
+```
+](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC165453/)
+<br><br>
+- 49 familias de riboswitches.
+- Conservación de secuencia.
+- Estructura secundaria.
+
+.right[Griffiths-Jones, *et al*, 2003]
+]
+
+.pull-right[
+.center[
+**T-Box leader**
+]
+```{r,echo=FALSE, out.width='100%'}
+include_graphics("img/tbox.png")
+```
+
+]
+
+---
+# Antecedentes
+<br>
+.left-column[<br><br>
+Estudiando 60 genomas bacterianos.
+
+Los organismos patógenos intracelulares y endosimbiontes mostraron un bajo número de TFs.
+
+Los organismos de vida libre mostraron una mayor proporción de TFs.
+
+La proporción de TFs/gen aumenta con el genooma.
+]
+
+.right-column[<br><br>
+```{r, echo=FALSE,out.width='110%'}
+include_graphics("img/cases2003.png")
+```
+green: free-living organisms; red: pathogens; yellow: intracellular.  
+.right[Cases, *et al*, 2003]
+
+]
+
+
+---
 # Antecedentes
 <br><br>
 .left-column[<br><br>
 Estudiando 90 genomas de bacterias y archaeas.
 
-Los organismos patógenos y parásitos estrictos mostraron un bajo número de TFs.
-
 Los organismos de vida libre y simbiontes mostraron una mayor proporción de TFs.
+
+Parásitos estrictos y patógenos mostraron una menor proporción de TFs.
 ]
 .right-column[
 [
@@ -133,7 +220,30 @@ Los organismos de vida libre y simbiontes mostraron una mayor proporción de TFs
 include_graphics("img/perezrueda_2004.png")
 ```
 ](https://www.sciencedirect.com/science/article/abs/pii/S1476927104000672?via%3Dihub)
-Pérez-Rueda, *et al*, 2004
+.right[Pérez-Rueda, *et al*, 2004]
+]
+---
+.center[
+# Preguntas sin responder
+]
+.pull-left[
+```{r, echo=FALSE,out.width='50%',fig.align='center'}
+include_graphics("img/oneplot.png")
+```
+```{r, echo=FALSE,out.width='40%',fig.align='center'}
+include_graphics("img/question.png")
+```
+```{r, echo=FALSE,out.width='100%'}
+include_graphics("img/twoplots.png")
+```
+]
+.pull-right[<br><br><br><br>
+.center[
+**Enriquecimiento de familias**
+]
+```{r, echo=FALSE,out.width='50%', fig.align='center'}
+include_graphics("img/barras.png")
+```
 ]
 
 ---
@@ -241,8 +351,13 @@ Total:
 .center[
 **Conteo de reguladores** ]
 ```{r,echo=FALSE}
-x <- read.table("data/table_cog.txt", header = TRUE)
-kable(x[c(1,2,5),c(1,5:8)], row.names = FALSE,align = 'c') %>% 
+x <- read.delim("data/table_cog.txt", header = TRUE, sep = "\t")
+kable(x[c(1,2,5),c(1,4:7)], row.names = FALSE,align = 'c',format = "html",
+      col.names = c("organismo",
+                    "COG0568 (sigmaD/sigmaS/sigmaH)",
+                    "COG1191 (sigmaF/SigB)",
+                    "COG1508 (sigmaN)",
+                    "COG1595 (ECF)")) %>% 
     kable_styling(position = "center") %>% 
   column_spec(1:5, border_left = TRUE)  %>% 
   column_spec(5, border_right = TRUE)
@@ -254,7 +369,9 @@ kable(x[c(1,2,5),c(1,5:8)], row.names = FALSE,align = 'c') %>%
 **Adición de tamaño de genoma y grupo filogenético**]
 ```{r, echo=FALSE}
 x <- read.table("data/table_ko.txt", header = TRUE)
-kable(x[c(1,2,5),-6], row.names = FALSE, align ='c') %>%
+kable(x[c(1,2,5),-6], row.names = FALSE, align ='c', format = "html",
+      col.names = c("organismo",	"phylum",	"clase",	"CDS",	
+                    "K02405 (sigmaF)",	"K03087 (sigmaS)",	"K03088 (ECF)")) %>%
     kable_styling(position = "center")%>% 
   column_spec(1:7, border_left = TRUE)  %>% 
   column_spec(7, border_right = TRUE)
@@ -267,7 +384,7 @@ kable(x[c(1,2,5),-6], row.names = FALSE, align ='c') %>%
 .pull-left[
 .center[** Búsqueda de riboswitches**]
 <br>
-```{r,echo=FALSE,out.width='50%', fig.align='center',fig.cap="Matrices de covarianza"}
+```{r,echo=FALSE,out.width='50%', fig.align='center',fig.cap="Matrices de covarianza (Aptámero)"}
 include_graphics("img/rfam.png")
 ```
 <br>
@@ -279,14 +396,17 @@ include_graphics("img/cmsearch.png")
 include_graphics("img/intergenica.png")
 ```
 ]
-
+--
 .pull-right[
 **Predicción de estructura de terminador Rho-independiente**
 <br><br>
+[
 ```{r,echo=FALSE,out.width='90%',fig.align='center'}
 include_graphics("img/ribo_transcripcional.png")
 
 ```
+](https://www.asmscience.org/content/book/10.1128/9781555817992.chap23)
+.right[Basado en Merino & Yanofsky, 2002]
 
 ```{r,echo=FALSE,out.width='40%',fig.align='center'}
 include_graphics("img/rnafold.png")
@@ -347,32 +467,24 @@ class: chapter-slide
 
 <br>
 ```{r,echo=FALSE}
-x <- read.table("data/table_cog.txt", header = TRUE)
-kable(x[,c(1,2,5:8)], row.names = FALSE,align = c('c')) %>% 
+x <- read.delim("data/table_cog.txt", header = TRUE)
+kable(x[,c(1,2,4:7)], format = "html",row.names = FALSE,align = c('c'), table.attr = "style='width:90%;'",
+      col.names = c("organismo", "phylum", 
+                    "COG0568 (sigmaD/sigmaS/sigmaH)",
+                    "COG1191 (sigmaF/SigB)",
+                    "COG1508 (sigmaN)", "COG1595 (ECF)")) %>% 
   kable_styling(position = "center", full_width = FALSE) %>% 
   column_spec(1:6, border_left = TRUE) %>% 
   column_spec(6, border_right = TRUE) 
 ```
 <br><br>
-
+ 
 .center[**Prueba de Fisher**]
 ```{r,echo=FALSE}
-x <- tibble(x = c("Número de reguladores COG0568 en Proteobacterias", "Número de reguladores COG0568 en otros phyla"), y = c("Número de reguladores excepto COG0568 en Protebacterias", "Número de reguladores excepto COG0568 en otros phyla") )
+x <- tibble(x = c("# reguladores COG0568 en Proteobacterias", "# de reguladores COG0568 en otros phyla"), y = c("# de reguladores de otros COG en Protebacterias", "# de reguladores de otros COG en otros phyla") )
 kable(x,col.names = c("",""),table.attr = "style='width:60%;'", align = 'c') %>% 
   kable_styling(position = "center") %>% 
   column_spec(1:2, color = 'black', background = '#d4d3d2')
-```
-
----
-# El enriquecimiento de cada familia es específica del *phylum*
-<br><br>
-.center[**Factores transcripcionales**]
-
-```{r,echo=FALSE,out.width='100%',fig.align='center'}
-include_graphics("img/F6_1.png")
-```
-```{r,echo=FALSE,out.width='20%',fig.align='center'}
-include_graphics("img/oddratio.png")
 ```
 
 ---
@@ -387,26 +499,24 @@ include_graphics("img/oddratio.png")
 ```
 
 Ampliamente distribuidos: 
-- DtxR (COG1321) 
-- TFs con dominios helix-turn-helix (HTH)-like (COG2865) 
-- GntR (COG1725)
+- DtxR (COG1321) -> metabolismo de hierro.
+- TFs con dominios helix-turn-helix (HTH)-like (COG2865).
+- GntR (COG1725) -> homeostasis de nitrógeno y metabolismo de carbono.
 ]
 --
 .pull-right[
-Archaeas 
-- TFs con dominio HTH (COG3373)
-- TFs involucrados en biosíntesis de tiamina (COG1992) 
-- TFs con función desconocida (COG1709)
+Archaeas
+- TFs con dominio HTH (COG3373).
+- TFs involucrados en biosíntesis de tiamina (COG1992).
+- TFs con función desconocida (COG1709).
 
 Firmicutes
-- CodY (COG4465)
-- ComK (COG4903)
-- TFs predichos con dominios CBS (COG4109)
+- CodY (COG4465) -> regulación de la flagelina.
+- ComK (COG4903) -> expresión de genes de competencia.
 
 Proteobacterias
-- MltR (COG3722)
-- TFs dependientes de sigma54 (COG4650)
-
+- MltR (COG3722) -> producción de antibióticos.
+- TFs dependientes de sigma54 (COG4650).
 ]
 
 ---
@@ -421,21 +531,21 @@ include_graphics("img/oddratio.png")
 ```
 
 Proteobacteria (114 KOs exclusivos)
-- 25 grupos KO LysR
-- 21 KOs LuxR
-- 18 grupos AraC
-- 12 grupos TetR/AcrR
+- 25 grupos KO LysR -> virulencia, metabolismo, QS, motilidad.
+- 21 KOs LuxR -> QS
+- 18 grupos AraC -> resistencia a antibióticos y patogenicidad.
+- 12 grupos TetR/AcrR -> patogenicidad y bombas de flujo.
 ]
 .pull-right[<br><br>
 Firmicutes (28 grupos KOs exclusivos)
-- MarR con dominio helix-turn-helix 
-- MerR 
+- MarR -> bombas de flujo, resistencia.
+- MerR -> respuesta a estrés oxidativo, metales pesados o antibiióticos.
 
 Actinobacterias (4 grupos KO exclusivos)
-- WhiB-like
+- WhiB-like -> anabolismo de lípidos durante la infección y virulencia.
 
 Bacteroidetes (2 grupos KO exclusivos)
-- CRP/FNR
+- CRP/FNR -> respuesta a múltiples señales ambientales.
 - HTH-type.
 
 Archaeas (4 grupos KO exclusivos con función desconocida.
@@ -447,16 +557,14 @@ Archaeas (4 grupos KO exclusivos con función desconocida.
 ```{r,echo=FALSE,out.width='70%',fig.align='center'}
 include_graphics("img/F6_2.png")
 ```
-```{r,echo=FALSE,out.width='20%',fig.align='center'}
-include_graphics("img/oddratio.png")
-```
 
 .pull-left[
-sigmaH -> Respuesta a heat shock.  
-sigH -> Genes de fase estacionaria y durante el inicio de la esporulación.
+- sigH -> Genes de fase estacionaria y durante el inicio de la esporulación.
+- sigI -> Choque térmico y sobrevivencia en bajas temperaturas.
 ]
 .pull-right[
-sigmaF en Chlamydias se expresa durante el ciclo de infección y en respuesta a choque térmico.
+- sigmaH -> Respuesta a heat shock.  
+- sigmaF en Chlamydias se expresa durante el ciclo de infección y en respuesta a choque térmico.
 ]
 ---
 # Existe un enriquecimiento de familias dentro de cada *phylum*
@@ -465,10 +573,10 @@ sigmaF en Chlamydias se expresa durante el ciclo de infección y en respuesta a 
 include_graphics("img/F7.png")
 ```
 .pull-left[
-- Familia AcrR en Actinobacterias
-- Familia LysR en Proteobacteras
-- Familia MurR/RpiR con dominios HTH y SIS en Tenericutes
-- Familia LacI/PurR en Verrucomicrobia
+- AcrR (Actinobacterias) patogenicidad.
+- LysR (Proteobacterias) virulencia, QS.
+- MurR/RpiR (Tenericutes): reciclaje de pared celular.
+- LacI/PurR (Verrucomicrobia): metabolismo de azúcares y purinas.
 ]
 .pull-right[
 - Factores sigma D, S y H preponderantemente abundantes en Chlamydias y Tenericutes.
@@ -571,6 +679,18 @@ include_graphics("img/F9_3.png")
 ```{r, echo=FALSE,out.width='100%', fig.align='center'}
 include_graphics("img/F9_2.png")
 ```
+---
+class: chapter-slide
+# Conclusiones
+---
+# Conclusiones
+<br><br><br>
+1. La abundancia de factores transcripcionales y factores sigma tiene una relación positiva con el tamaño del genoma.
+2. La relación de factores transcripcionales y sigma con el genoma es específica de cada *phylum*.
+3. La relación entre el número de factores transcripcionales y factores sigma por genoma es específica del *phylum* y muestra un comportamiento de compensación.
+4. El enriquecimiento de las familias de reguladores trasncripcionales responde al estilo de vida de cada *phylum*.
+5. Existen tendencias específicas de *phylum* en el uso de riboswitches de tipo atenuador transcripcional y traduccional.
+6. El arreglo genómico de los factores sigma varía de acuerdo con la familia del factor.
 
 ---
 class: chapter-slide
@@ -588,7 +708,7 @@ class: chapter-slide
 transcripcionales a diversos niveles taxonómicos.
 4. Determinar los posibles genes blanco de las familias de factores transcripcionales y
 factores sigma.
-5. Evaluar la contribución del contexto genómico de los factores transcripcionales y sigma
+5. Evaluar la contribución del contexto genómico de los factores transcripcionales
 en la regulación génica específica de *phylum*.
 
 ---
